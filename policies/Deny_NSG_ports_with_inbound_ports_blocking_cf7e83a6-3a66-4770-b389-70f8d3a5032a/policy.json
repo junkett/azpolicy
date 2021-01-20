@@ -1,0 +1,77 @@
+{
+ "properties": {
+  "displayName": "Deny NSG ports with inbound ports blocking",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Block specific ports from internet",
+  "metadata": {
+   "category": "Network security",
+   "createdBy": "079e1005-3ead-4090-a376-aca00ad6ed48",
+   "createdOn": "2020-12-10T08:26:34.3271357Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "deniedPorts": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Ports to block",
+     "description": "The inbound ports that should be blocked"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Network/networkSecurityGroups/securityRules"
+     },
+     {
+      "allOf": [
+       {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules/access",
+        "equals": "Allow"
+       },
+       {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules/direction",
+        "equals": "Inbound"
+       },
+       {
+        "anyOf": [
+         {
+          "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange",
+          "in": "[parameters('deniedPorts')]"
+         },
+         {
+          "not": {
+           "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+           "notIn": "[parameters('deniedPorts')]"
+          }
+         }
+        ]
+       },
+       {
+        "anyOf": [
+         {
+          "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefix",
+          "in": [
+           "*",
+           "Internet"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/3a60e7b7-ac49-45d8-8a8f-ba61cdc5dc1f/providers/Microsoft.Authorization/policyDefinitions/cf7e83a6-3a66-4770-b389-70f8d3a5032a",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "cf7e83a6-3a66-4770-b389-70f8d3a5032a"
+}
