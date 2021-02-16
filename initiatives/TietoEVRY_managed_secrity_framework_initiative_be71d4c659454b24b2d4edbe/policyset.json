@@ -2,6 +2,7 @@
  "properties": {
   "displayName": "TietoEVRY managed secrity framework initiative",
   "policyType": "Custom",
+  "description": "TietoEVRY Security Framework initiative",
   "metadata": {
    "category": "Security Center",
    "version": "0.9",
@@ -10,8 +11,8 @@
    },
    "createdBy": "53063447-009e-4af4-aaa0-d5de28a071cb",
    "createdOn": "2021-02-16T13:35:27.017007Z",
-   "updatedBy": null,
-   "updatedOn": null
+   "updatedBy": "53063447-009e-4af4-aaa0-d5de28a071cb",
+   "updatedOn": "2021-02-16T14:21:01.6303023Z"
   },
   "parameters": {},
   "policyDefinitions": [

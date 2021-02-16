@@ -1,0 +1,25 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "TietoEVRY managed secrity framework initiative",
+  "policyDefinitionId": "/subscriptions/e416f6e4-2850-4d13-88e1-2d6e67461238/providers/Microsoft.Authorization/policySetDefinitions/be71d4c659454b24b2d4edbe",
+  "scope": "/subscriptions/e416f6e4-2850-4d13-88e1-2d6e67461238",
+  "notScopes": [],
+  "parameters": {},
+  "metadata": {
+   "assignedBy": "David Bartoš",
+   "parameterScopes": {},
+   "createdBy": "53063447-009e-4af4-aaa0-d5de28a071cb",
+   "createdOn": "2021-02-16T13:36:20.1243164Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/e416f6e4-2850-4d13-88e1-2d6e67461238/providers/Microsoft.Authorization/policyAssignments/5c91cee5b015443b8593fa7f",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "5c91cee5b015443b8593fa7f"
+}
